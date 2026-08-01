@@ -13,6 +13,7 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
+st.set_page_config(layout="wide")
 
 #============ Step 2 Load ENV and API-KEYS ==============
 st.title("Agentic ppt generator")
@@ -112,7 +113,7 @@ tab1,tab2,tab3 = st.tabs(["Generate Image",
 
 user_input = st.text_area("Write Prompt & Click Enter")
 
-if (user_input)&(leader_agent):
+if (user_input):
   with tab1:
     if st.button("Click to Generate Image",key="Image-Button"):
       with st.spinner("Running Agent"):
