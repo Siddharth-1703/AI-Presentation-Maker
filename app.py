@@ -36,8 +36,10 @@ if not all(ALL_API):
 
 elif all(ALL_API):
   st.success("API KEYS LOADED")
-  options = ["gemini-3.5-flash-lite","gemini-3.5-flash"
-  "gemini-2.5-flash-lite","gemini-2.5-flash"]
+  options = ["gemini-3.5-flash-lite",
+             "gemini-3.5-flash",
+             "gemini-2.5-flash-lite",
+             "gemini-2.5-flash"]
 
 selected_model = st.selection("Select-Model",options=options)
 
