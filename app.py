@@ -44,7 +44,6 @@ selected_model = st.selection("Select-Model",options=options)
 model=ChatGoogleGenerativeAI(
   model=selected_model,
   google_api_key = GOOGLE_API_KEY)
-
 else:
   st.sidebar.info("Try Valid API-keys")
 
