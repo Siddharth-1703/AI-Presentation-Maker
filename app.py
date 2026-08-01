@@ -27,7 +27,7 @@ TAVILY_API_KEYS=st.sidebar.text_input("TAVILY_API_KEY",type="password")
 ALL_API=[GOOGLE_API_KEYS,TAVILY_API_KEYS]
 
 if not all(ALL_API):
-  st.sidebr.error("Must Pass all API Keys")
+  st.sidebar.error("Must Pass all API Keys")
   url = "https://aistudio.google.com/api-keys"
   st.markdown(f"Get Google API-key-{url}")
 
@@ -43,7 +43,7 @@ selected_model = st.selection("Select-Model",options=options)
 
 model=ChatGoogleGenerativeAI(
   model=selected_model,
-  google_api_key = GOOGLE_API_KEY)
+  google_api_key = GOOGLE_API_KEYS)
 else:
   st.sidebar.info("Try Valid API-keys")
 
@@ -55,7 +55,7 @@ def search_latest_info(query):
     based on given user query related research or
     contents"""
 
-    client = TavilyClient(api_key=TAVILY_API_KEY)
+    client = TavilyClient(api_key=TAVILY_API_KEYS)
     response = client.search(query)
     return response
 
@@ -121,7 +121,7 @@ if (user_input):
           import requests as r
           img_data=r.get(url)
           st.image(url)
-        expect Exception as err:
+        except Exception as err:
          st.error("error code:",err)
 
   with tab2:
@@ -153,7 +153,7 @@ if (user_input):
                                 file_name = 'ppt.html',
                                 mime= 'text/html'):
               st.success("PPt Downloaded Successfully!!")
-          excepts Exception as err:
+          except Exception as err:
             st.error("Error Code: " ,err)
            
     
