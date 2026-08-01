@@ -8,7 +8,6 @@ import pytesseract as pyt
 import streamlit as st
 import os
 import time
-import IPython as ip
 from PIL import Image
 import pandas as pd
 import numpy as np
