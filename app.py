@@ -47,7 +47,7 @@ model=ChatGoogleGenerativeAI(
   model=selected_model,
   google_api_key = GOOGLE_API_KEYS)
 else:
-    st.sidebar.info("Try Valid API-keys")
+  st.sidebar.info("Try Valid API-keys")
 
 #==========================STEP 3=============================
 # Search latest info using Tavily
