@@ -41,11 +41,11 @@ elif all(ALL_API):
              "gemini-2.5-flash-lite",
              "gemini-2.5-flash"]
 
-selected_model = st.selection("Select-Model",options=options)
-
-model=ChatGoogleGenerativeAI(
-  model=selected_model,
-  google_api_key = GOOGLE_API_KEYS)
+  selected_model = st.selection("Select-Model",options=options)
+  
+  model=ChatGoogleGenerativeAI(
+    model=selected_model,
+    google_api_key = GOOGLE_API_KEYS)
 else:
   st.sidebar.info("Try Valid API-keys")
 
